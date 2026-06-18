@@ -5,7 +5,8 @@
 - **무엇:** 음성 콜봇에서 화면으로 전환되는 멀티모달 "보이는 콜봇"의 동작 데모.
 - **목표:** 영업 시연용 데모. **프론트엔드 전용, 백엔드 없음**(목업으로 동작).
 - **전체 사양(단일 진실 출처):** `@보이는_콜봇_PRD_초안.md` — 상세는 PRD를 따른다. 이 파일은 핵심 제약만 요약한다.
-- **저장소(GitHub):** `https://github.com/chajunghun83/aicc-visual-callbot` (Private, 기본 브랜치 `main`)
+- **저장소(GitHub):** `https://github.com/chajunghun83/aicc-visual-callbot` (Public, 기본 브랜치 `main`)
+- **배포(데모 URL):** `https://chajunghun83.github.io/aicc-visual-callbot/` — GitHub Pages. `main`에 push되면 GitHub Actions(`.github/workflows/deploy.yml`)가 자동 빌드·배포한다. (서브경로 배포라 `vite.config.js`의 `base`를 빌드 시 `/aicc-visual-callbot/`로 설정)
 
 ## 기술 스택
 
