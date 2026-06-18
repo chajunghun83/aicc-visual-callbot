@@ -48,8 +48,8 @@ const waveMode = computed(() =>
 const COMPACT_COMPONENTS = ['StockDetail', 'MarketBoard']
 const isCompact = computed(() => COMPACT_COMPONENTS.includes(currentComponent.value))
 
-// 4뎁스(상세) 멘트 타이핑 속도(ms/자). 값이 클수록 느림. (기본 단계는 BotSpeech 기본값 8)
-const DETAIL_CHAR_MS = 55
+// AI 멘트 타이핑 속도(ms/자). 값이 클수록 느림. 모든 단계 공통(일반·상세 동일).
+const CHAR_MS = 55
 
 // Lottie 오브 애셋 경로(public/lottie/ai-orb.lottie). 비어 있으면 CSS 글로우 오브로 동작.
 const LOTTIE_ORB_SRC = `${import.meta.env.BASE_URL}lottie/ai-orb.lottie`
@@ -133,7 +133,7 @@ onUnmounted(() => {
             compact
             :text="currentSay"
             :one-shot="currentSayOnce"
-            :char-ms="DETAIL_CHAR_MS"
+            :char-ms="CHAR_MS"
             @done="onSpeechDone"
           />
         </WaveIndicator>
@@ -156,7 +156,12 @@ onUnmounted(() => {
             :lottie-src="LOTTIE_ORB_SRC"
             :text-top="ORB_TEXT_TOP"
           >
-            <BotSpeech :text="currentSay" :one-shot="currentSayOnce" @done="onSpeechDone" />
+            <BotSpeech
+              :text="currentSay"
+              :one-shot="currentSayOnce"
+              :char-ms="CHAR_MS"
+              @done="onSpeechDone"
+            />
           </WaveIndicator>
         </div>
         <div v-if="activeComponent" class="w-full shrink-0 pt-4">
