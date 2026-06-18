@@ -10,7 +10,7 @@ const props = defineProps({
 })
 defineEmits(['click'])
 
-const LOTTIE_ORB_SRC = '/lottie/ai-orb.lottie'
+const LOTTIE_ORB_SRC = `${import.meta.env.BASE_URL}lottie/ai-orb.lottie`
 
 // 세로 카드 계열 — 구조는 동일하고 '배경 + 보더'만 다른 후보들.
 const CARD_BG = {

@@ -52,7 +52,7 @@ const isCompact = computed(() => COMPACT_COMPONENTS.includes(currentComponent.va
 const DETAIL_CHAR_MS = 55
 
 // Lottie 오브 애셋 경로(public/lottie/ai-orb.lottie). 비어 있으면 CSS 글로우 오브로 동작.
-const LOTTIE_ORB_SRC = '/lottie/ai-orb.lottie'
+const LOTTIE_ORB_SRC = `${import.meta.env.BASE_URL}lottie/ai-orb.lottie`
 
 // ▼ 봇 텍스트 위치 조절: 오브 영역 상단 기준 오프셋(px).
 //   더 작게(예: -90px) → 텍스트가 위로 올라가 오브에서 멀어짐.
