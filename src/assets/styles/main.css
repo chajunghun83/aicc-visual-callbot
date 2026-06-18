@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/*
+ * 디자인 토큰 — docs/design.md 색 팔레트를 Tailwind v4 테마 변수로 등록.
+ * 정확한 색 재현을 위해 PRD/design.md의 hex 값을 그대로 사용한다.
+ * 사용 예: bg-bg, text-ink, text-muted, border-border, bg-accent,
+ *          text-up(상승=빨강) / text-down(하락=파랑) / text-flat(보합=회색)
+ */
+@theme {
+  /* 폰트 — 한국어 가독성 우선 (Pretendard) */
+  --font-sans: "Pretendard Variable", Pretendard, system-ui, -apple-system, sans-serif;
+
+  /* 표면 / 텍스트 / 보더 */
+  --color-bg: #F7F8FA;        /* 배경 */
+  --color-surface: #FFFFFF;   /* 표면(카드) */
+  --color-ink: #1F2733;       /* 본문 텍스트 */
+  --color-muted: #6B7480;     /* 보조 텍스트 */
+  --color-border: #E5E8EC;    /* 보더 */
+
+  /* 액센트(딥블루 단일 포인트) */
+  --color-accent: #1E4E8C;
+
+  /* 상태색 (저채도) */
+  --color-success: #2E7D5B;
+  --color-warning: #A86B1E;
+  --color-danger: #B23B3B;
+
+  /* 등락 색 (한국 증권 관례: 상승=빨강 / 하락=파랑 / 보합=회색) */
+  --color-up: #D14343;
+  --color-down: #2F6FD0;
+  --color-flat: #6B7480;
+}
+
+/* 데모 기본 바탕 — 모바일폰 세로 기준 */
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
